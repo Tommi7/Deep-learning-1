@@ -7,8 +7,8 @@ import os
 
 # Hyperparameters
 learning_rate = 0.001
-batch_size = 32
-epochs = 100
+batch_size = BATCH_SIZE
+epochs = 1
 print('loading')
 # Data loading and preprocessing
 (train_images, train_labels), (test_images, test_labels) = load_data()

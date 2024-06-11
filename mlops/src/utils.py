@@ -66,16 +66,16 @@ def calculate_iou(prediction_boxes, target_boxes):
     """
 
     IoUs = []
-    print(f'loss function gives: {prediction_boxes.shape}')
+    # print(f'loss function gives: {prediction_boxes.shape}')
     prediction_boxes = prediction_boxes.numpy()
-    print(f'numpy makes it this shape: {prediction_boxes.shape}')
+    # print(f'numpy makes it this shape: {prediction_boxes.shape}')
     target_boxes = target_boxes.numpy()
     for prediction_row, target_row in zip(prediction_boxes, target_boxes):
-        print(f'a row has {prediction_row.shape[0]} cells with bboxes')
+        # print(f'a row has {prediction_row.shape[0]} cells with bboxes')
         for pred_bboxes, target_bboxes in zip(prediction_row, target_row):
-            print(f'a cell has {pred_bboxes.shape[0]} bboxes')
+            # print(f'a cell has {pred_bboxes.shape[0]} bboxes')
             for box1, box2, in zip(pred_bboxes, target_bboxes):
-                print(f'a bbox has {box1.shape[0]} values')
+                # print(f'a bbox has {box1.shape[0]} values')
                 # Extract coordinates
                 x1_1, y1_1, x2_1, y2_1 = box1
                 x1_2, y1_2, x2_2, y2_2 = box2
@@ -96,10 +96,9 @@ def calculate_iou(prediction_boxes, target_boxes):
                 iou = intersection_area / union_area if union_area > 0 else 0.0
                 
                 IoUs.append(iou)
-    tf.convert_to_tensor(IoUs, dtype=np.float32)
-    print(IoUs.shape)
+    tf.convert_to_tensor(IoUs, dtype=tf.float32)
+    # print(IoUs.shape)
     tf.reshape(IoUs, (9, 16, 3))
-    print(IoUs)
     return IoUs
 
 if __name__ == '__main__':

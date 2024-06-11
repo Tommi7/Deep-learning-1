@@ -97,7 +97,7 @@ def load_data(test_size=0.2, random_state=42):
         tuple: Tuples containing train and test sets for images and corresponding CSV DataFrames.
     """
     # Preprocess CSV data
-    image_names, labels = preprocess_csv()
+    image_names, labels = preprocess_csv()[:64]
     
     # Split image names into train and test sets
     train_image_names, test_image_names, train_labels, test_labels = train_test_split(image_names, labels, test_size=test_size, random_state=random_state)

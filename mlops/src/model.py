@@ -29,17 +29,17 @@ def build_model(input_shape=(270, 480, 3), num_bboxes=BOUNDING_BOXES):
     x = layers.Conv2D(512, (3, 3), padding='same', activation='relu')(x)
     x = layers.MaxPooling2D((2, 2), strides=(2, 2))(x)
     
-    for _ in range(4):
-        x = layers.Conv2D(256, (1, 1), padding='same', activation='relu')(x)
-        x = layers.Conv2D(512, (3, 3), padding='same', activation='relu')(x)
+    # for _ in range(4):
+    #     x = layers.Conv2D(256, (1, 1), padding='same', activation='relu')(x)
+    #     x = layers.Conv2D(512, (3, 3), padding='same', activation='relu')(x)
     
-    x = layers.Conv2D(512, (1, 1), padding='same', activation='relu')(x)
-    x = layers.Conv2D(1024, (3, 3), padding='same', activation='relu')(x)
-    x = layers.MaxPooling2D((2, 2), strides=(2, 2))(x)
+    # x = layers.Conv2D(512, (1, 1), padding='same', activation='relu')(x)
+    # x = layers.Conv2D(1024, (3, 3), padding='same', activation='relu')(x)
+    # x = layers.MaxPooling2D((2, 2), strides=(2, 2))(x)
     
-    for _ in range(2):
-        x = layers.Conv2D(512, (1, 1), padding='same', activation='relu')(x)
-        x = layers.Conv2D(1024, (3, 3), padding='same', activation='relu')(x)
+    # for _ in range(2):
+    #     x = layers.Conv2D(512, (1, 1), padding='same', activation='relu')(x)
+    #     x = layers.Conv2D(1024, (3, 3), padding='same', activation='relu')(x)
     
     x = layers.Conv2D(1024, (3, 3), padding='same', activation='relu')(x)
     x = layers.Conv2D(1024, (3, 3), strides=(2, 2), padding='same', activation='relu')(x)

@@ -1,5 +1,0 @@
-names:
-  0: face
-path: training_runs
-train: training_run_1/train
-val: training_run_1/val

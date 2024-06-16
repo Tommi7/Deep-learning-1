@@ -1,0 +1,5 @@
+names:
+  0: face
+path: Data
+train: train
+val: val
